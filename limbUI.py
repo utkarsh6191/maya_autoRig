@@ -185,6 +185,7 @@ def createLimb_ArmSetup(guideList, *args):
     deform_grup = "deform_grup"
     root_ctrl = pm.circle(n="root_ctrl", c=(0, 0, 0), nr=(0, 1, 0), sw=360, r=2, d=1, ut=0,
                           tol=0.01, s=8)
+
     colorCtr("VOILET", root_ctrl[0])
     root_ctrl_offset = createOffsetGrp(root_ctrl)
     pm.parent(root_ctrl_offset, "ctrl_grup")
@@ -340,6 +341,7 @@ def createLimb_ArmSetup(guideList, *args):
     pm.delete(upper_loc)
     pm.delete(middle_loc)
     pm.delete(end_loc)
+    pm.parent(deform_grup,root_ctrl[0])
 
     # snapObject(jnt_chain[0],arm_ctrl[0])
     # switch_offset_grup(arm_ctrl[0])
